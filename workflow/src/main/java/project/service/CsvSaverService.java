@@ -4,13 +4,16 @@ import project.model.UserRecord;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class CsvSaverService {
 
     public static void saveUsersToCsv(List<UserRecord> users, String filePath) {
-        try (FileWriter writer = new FileWriter(filePath)) {
-            // Écrire l'en-tête du fichier CSV
+        String outputDirectory = "src/main/resources/output/";
+        String fullPath = Paths.get(outputDirectory, filePath).toString();
+        System.out.println(fullPath);
+        try (FileWriter writer = new FileWriter(fullPath)) {
             writer.append("id,first_name,last_name,email,gender,age,birthdate,country,city\n");
 
             // Écrire chaque utilisateur
@@ -25,7 +28,7 @@ public class CsvSaverService {
                         .append(user.city() + "\n");
             }
 
-            System.out.println("Fichier exporté avec succès : " + filePath);
+            System.out.println("Fichier exporté avec succès : " + fullPath);
         } catch (IOException e) {
             System.err.println("Erreur lors de l'exportation du CSV : " + e.getMessage());
         }

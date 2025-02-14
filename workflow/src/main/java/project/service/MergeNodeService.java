@@ -11,7 +11,7 @@ public class MergeNodeService {
     // Fusionner deux flux de données
     public static List<UserRecord> mergeUserStreams(List<UserRecord> stream1, List<UserRecord> stream2) {
         return Stream.concat(stream1.stream(), stream2.stream())
-                .distinct() // pas de doublons
+                .distinct()
                 .collect(Collectors.toList());
     }
 }
