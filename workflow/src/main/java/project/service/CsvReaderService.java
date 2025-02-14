@@ -59,9 +59,8 @@ public class CsvReaderService {
                 data[3],  // email
                 data[4],  // gender
                 Integer.parseInt(data[5]), // age
-                data[6],  // birthdate
-                data[7],  // country
-                data[8]   // city
+                data[6],  // country
+                data[7]   // city
         );
     }
 }
