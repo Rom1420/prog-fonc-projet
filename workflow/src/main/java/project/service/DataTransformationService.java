@@ -8,7 +8,7 @@ import project.model.UserRecord;
 
 public class DataTransformationService {
 
-    // Filtrer les utilisateurs par âge (ex : >= 18 ans)
+    // Filtrer les utilisateurs par âge
     public static List<UserRecord> filterByAge(List<UserRecord> users, int minAge) {
         return users.stream()
                 .filter(user -> user.age() >= minAge)
@@ -38,7 +38,7 @@ public class DataTransformationService {
                 ))
                 .collect(Collectors.toList());
     }
-    // Filtrer les utilisateurs par genre (Male/Female)
+    // Filtrer les utilisateurs par genre
     public static List<UserRecord> filterByGender(List<UserRecord> users, String gender) {
         return users.stream()
                 .filter(user -> user.gender().equalsIgnoreCase(gender))
@@ -52,7 +52,7 @@ public class DataTransformationService {
                 .collect(Collectors.toList());
     }
 
-    // Filtrer par domaine d'email (@gmail.com, @yahoo.com, etc.)
+    // Filtrer par domaine d'email
     public static List<UserRecord> filterByEmailDomain(List<UserRecord> users, String domain) {
         return users.stream()
                 .filter(user -> user.email().endsWith(domain))
