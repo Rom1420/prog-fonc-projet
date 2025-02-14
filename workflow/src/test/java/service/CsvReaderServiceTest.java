@@ -13,6 +13,7 @@ public class CsvReaderServiceTest {
     void testCsvReader() {
         CsvReaderService csvReader = new CsvReaderService();
         List<UserRecord> users = csvReader.readCsv("users.csv");
+        System.out.println("Il y a " + users.size()+ " utilisateurs");
 
         // Vérifier que la liste n'est pas vide
         assertNotNull(users, "La liste d'utilisateurs ne doit pas être null");
