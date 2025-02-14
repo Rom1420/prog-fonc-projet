@@ -7,7 +7,6 @@ public record UserRecord(
         String email,
         String gender,
         int age,
-        String birthdate,
         String country,
         String city
 ) {}

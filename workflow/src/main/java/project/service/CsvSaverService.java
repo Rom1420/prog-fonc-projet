@@ -21,7 +21,6 @@ public class CsvSaverService {
                         .append(user.email() + ",")
                         .append(user.gender() + ",")
                         .append(user.age() + ",")
-                        .append(user.birthdate().toString() + ",")
                         .append(user.country() + ",")
                         .append(user.city() + "\n");
             }

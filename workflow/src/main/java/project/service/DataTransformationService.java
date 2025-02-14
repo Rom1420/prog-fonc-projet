@@ -32,7 +32,6 @@ public class DataTransformationService {
                         user.email(),
                         user.gender(),
                         user.age(),
-                        user.birthdate(),
                         user.country(),
                         user.city()
                 ))
