@@ -1,4 +1,5 @@
-package src.main.java.project.service;
+package project.service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import project.model.UserRecord;
