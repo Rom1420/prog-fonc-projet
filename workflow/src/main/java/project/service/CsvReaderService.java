@@ -3,17 +3,19 @@ package project.service;
 import project.model.UserRecord;
 
 import java.io.*;
-import java.nio.file.*;
 import java.util.*;
 
 public class CsvReaderService {
-    public List<UserRecord> readCsv(String filePath) {
+    public List<UserRecord> readCsv(String resourcePath) {
         List<UserRecord> users = new ArrayList<>();
 
         try {
-            Path path = Paths.get(filePath).toAbsolutePath();
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resourcePath);
+            if (inputStream == null) {
+                throw new FileNotFoundException("Fichier non trouvé : " + resourcePath);
+            }
 
-            try (BufferedReader br = Files.newBufferedReader(path)) {
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
                 String line;
                 boolean isFirstLine = true;
                 while ((line = br.readLine()) != null) {
@@ -43,4 +45,3 @@ public class CsvReaderService {
         return users;
     }
 }
-

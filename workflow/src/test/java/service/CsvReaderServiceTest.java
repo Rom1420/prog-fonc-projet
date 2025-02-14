@@ -12,7 +12,7 @@ public class CsvReaderServiceTest {
     @Test
     void testCsvReader() {
         CsvReaderService csvReader = new CsvReaderService();
-        List<UserRecord> users = csvReader.readCsv("C:\\Users\\abbon\\OneDrive\\Documents\\SI4\\prog fonc\\prog-fonc-projet\\workflow\\src\\resources\\users.csv");
+        List<UserRecord> users = csvReader.readCsv("users.csv");
 
         // Vérifier que la liste n'est pas vide
         assertNotNull(users, "La liste d'utilisateurs ne doit pas être null");
